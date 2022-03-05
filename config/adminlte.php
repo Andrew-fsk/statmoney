@@ -231,8 +231,13 @@ return [
         ],
         [
             'text' => 'Settings',
-            'route'  => 'settings',
+            'route'  => 'user.settings',
             'icon' => 'fas fa-fw fa-lock',
+        ],
+        [
+            'text' => 'Accounts',
+            'route'  => 'account.index',
+            'icon' => 'fas fa-fw fa-credit-card',
         ],
 
     ],

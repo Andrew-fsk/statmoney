@@ -13,8 +13,7 @@ class UpdateController extends Controller
     {
         $userId = Auth::id();
         $user = User::findOrFail($userId);
-//        dd($request->validated());
         $user->update($request->validated());
-        return redirect()->route('settings');
+        return redirect()->route('user.settings');
     }
 }

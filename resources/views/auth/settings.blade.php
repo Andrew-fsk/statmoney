@@ -7,8 +7,7 @@
 @stop
 
 @section('content')
-    <p>Setting of account</p>
-    <form action="{{ route('update') }}" method="post">
+    <form action="{{ route('user.update') }}" method="post">
         @csrf
         @method('patch')
         <div class="form-group">

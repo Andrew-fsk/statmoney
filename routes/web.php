@@ -14,7 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'HomeController@index')->name('index');
-Route::get('/settings', 'Auth\EditController')->name('settings');
-Route::patch('/update', 'Auth\UpdateController')->name('update');
+Route::get('/settings', 'Auth\EditController')->name('user.settings');
+Route::get('/accounts', 'Account\IndexController')->name('account.index');
+Route::get('/account/new', 'Account\CreateController')->name('account.create');
+Route::post('/accounts', 'Account\StoreController')->name('account.store');
+Route::patch('/update', 'Auth\UpdateController')->name('user.update');
 
 Auth::routes();

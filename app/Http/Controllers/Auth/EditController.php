@@ -9,7 +9,7 @@ class EditController extends Controller
 {
     public function __invoke()
     {
-        return view('settings', [
+        return view('auth.settings', [
             'user' => Auth::user()
         ]);
     }
