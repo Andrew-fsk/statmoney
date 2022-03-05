@@ -1,15 +1,16 @@
 @extends('adminlte::page')
 
-@section('title', 'New account')
+@section('title', 'Edit ' . $account->name)
 
 @section('content_header')
-    <h1>Add new account</h1>
-    <form action="{{ route('account.store') }}" method="post">
+    <h1>Edit "{{ $account->name }}"</h1>
+    <form action="{{ route('account.update', $account->id) }}" method="post">
         @csrf
+        @method('patch')
         <div class="form-group">
             <label>Name</label>
             <input type="text" class="form-control @error('name') is-invalid @enderror" id="name"
-                   value="@if( old('name')){{ old('name') }}@else{{'New balance'}}@endif" name="name" placeholder="Name">
+                   value="@if( old('name') ){{ old('name') }}@else{{$account->name}}@endif" name="name" placeholder="Name">
             @error('name')
             <span class="error invalid-feedback">{{ $message }}</span>
             @enderror
@@ -17,7 +18,7 @@
         <div class="form-group">
             <label>Balance</label>
             <input type="text" class="form-control @error('balance') is-invalid @enderror" id="balance"
-                   value="@if( old('balance')){{ old('balance') }}@else{{0}}@endif" name="balance" placeholder="Balance">
+                   value="@if( old('balance') ){{ old('balance') }}@else{{$account->balance}}@endif" name="balance" placeholder="Balance">
             @error('balance')
             <span class="error invalid-feedback">{{ $message }}</span>
             @enderror
