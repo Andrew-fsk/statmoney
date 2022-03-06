@@ -45,7 +45,6 @@ class StoreRequest extends FormRequest
             $account = Account::find($data['account_id']);
             if (!isset($data['is_income']) && $account->balance < floatval($data['amount'])) {
                 $validator->errors()->add('amount', $account->balance . ' on balance');
-//                return redirect()->route('operation.index');
             }
         });
     }
