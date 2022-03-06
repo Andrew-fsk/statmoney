@@ -10,12 +10,8 @@ class IndexController extends Controller
 {
     public function __invoke()
     {
-        $operations = Auth::user()->operation()->get();
-        foreach ($operations as &$operation) {
-            $operation->account = Account::find($operation->account_id);
-        }
         return view('operation.index', [
-            'operations' => $operations
+            'operations' => Auth::user()->operations()->get()
         ]);
     }
 }

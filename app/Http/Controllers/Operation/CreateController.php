@@ -9,7 +9,7 @@ class CreateController extends Controller
 {
     public function __invoke()
     {
-        $accounts = Auth::user()->account()->get();
+        $accounts = Auth::user()->accounts()->get();
         return view('operation.create', [
             'accounts' => $accounts
         ]);
