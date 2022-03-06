@@ -16,8 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'HomeController@index')->name('index');
 Route::get('/settings', 'Auth\EditController')->name('user.settings');
 Route::get('/accounts', 'Account\IndexController')->name('account.index');
+Route::get('/operations', 'Operation\IndexController')->name('operation.index');
 Route::get('/account/new', 'Account\CreateController')->name('account.create');
+Route::get('/operation/new', 'Operation\CreateController')->name('operation.create');
 Route::post('/accounts', 'Account\StoreController')->name('account.store');
+Route::post('/operations', 'Operation\StoreController')->name('operation.store');
 Route::delete('/accounts/{account}', 'Account\DestroyController')->name('account.delete');
 Route::get('/account/{account}', 'Account\EditController')->name('account.edit');
 

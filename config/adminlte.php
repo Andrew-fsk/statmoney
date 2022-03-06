@@ -239,6 +239,11 @@ return [
             'route'  => 'account.index',
             'icon' => 'fas fa-fw fa-credit-card',
         ],
+        [
+            'text' => 'Operations',
+            'route'  => 'operation.index',
+            'icon' => 'fas fa-fw fa-list',
+        ],
 
     ],
 

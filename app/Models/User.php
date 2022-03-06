@@ -45,4 +45,8 @@ class User extends Authenticatable
     public function account(){
         return $this->hasMany(Account::class );
     }
+
+    public function operation(){
+        return $this->hasMany(Operation::class )->orderBy('created_at', 'DESC');
+    }
 }
