@@ -49,7 +49,18 @@
                                     <td>{{ $operation->created_at }}</td>
                                     <td> <a style="width: 40px; height: 40px; margin-top: 10px;" type="button" class="btn btn-primary"
                                             href="{{ route('operation.edit', $operation->id) }}"><i
-                                                class="far fa-edit"></i></a></td>
+                                                class="far fa-edit"></i></a>
+                                        <form action="{{ route('operation.delete', $operation->id) }}" method="post" class="">
+                                            @csrf
+                                            @method('delete')
+                                            <label style="margin-bottom: 0;" class="btn btn-danger">
+
+                                                <i class="far fa-trash-alt"></i>
+                                                <input type="submit" hidden value="Delete"
+                                                       class="btn btn-block btn-danger">
+                                            </label>
+                                        </form>
+                                    </td>
                                 </tr>
                             @endforeach
                             </tbody>
