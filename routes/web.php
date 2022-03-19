@@ -23,6 +23,8 @@ Route::post('/accounts', 'Account\StoreController')->name('account.store');
 Route::post('/operations', 'Operation\StoreController')->name('operation.store');
 Route::delete('/accounts/{account}', 'Account\DestroyController')->name('account.delete');
 Route::get('/account/{account}', 'Account\EditController')->name('account.edit');
+Route::get('/operation/{operation}', 'Operation\EditController')->name('operation.edit');
+Route::patch('/operation/{operation}', 'Operation\UpdateController')->name('operation.update');
 
 Route::patch('/update', 'Auth\UpdateController')->name('user.update');
 Route::patch('/account/{account}', 'Account\UpdateController')->name('account.update');

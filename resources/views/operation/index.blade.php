@@ -36,6 +36,7 @@
                                 <th>Comment</th>
                                 <th>Account</th>
                                 <th style="width: 150px;">Date</th>
+                                <th>Edit</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -46,6 +47,9 @@
                                     <td>{{ $operation->comment }}</td>
                                     <td>{{ $operation->account->name }}</td>
                                     <td>{{ $operation->created_at }}</td>
+                                    <td> <a style="width: 40px; height: 40px; margin-top: 10px;" type="button" class="btn btn-primary"
+                                            href="{{ route('operation.edit', $operation->id) }}"><i
+                                                class="far fa-edit"></i></a></td>
                                 </tr>
                             @endforeach
                             </tbody>
