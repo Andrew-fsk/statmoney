@@ -39,3 +39,12 @@ Route::group(['namespace' => 'Account', 'middleware' => 'auth'], function () {
     Route::patch('/account/{account}', 'UpdateController')->name('account.update');
 });
 
+Route::group(['namespace' => 'Category', 'middleware' => 'auth'], function () {
+    Route::get('/categories', 'IndexController')->name('category.index');
+//    Route::get('/account/new', 'CreateController')->name('account.create');
+//    Route::get('/account/{account}', 'EditController')->name('account.edit');
+//    Route::post('/accounts', 'StoreController')->name('account.store');
+    Route::delete('/categories/{category}', 'DestroyController')->name('category.delete');
+//    Route::patch('/account/{account}', 'UpdateController')->name('account.update');
+});
+

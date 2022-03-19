@@ -244,6 +244,11 @@ return [
             'route'  => 'operation.index',
             'icon' => 'fas fa-fw fa-list',
         ],
+        [
+            'text' => 'Categories',
+            'route'  => 'category.index',
+            'icon' => 'fas fa-th',
+        ],
 
     ],
 

@@ -13,9 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('operations', function (Blueprint $table) {
-            $table->unsignedBigInteger('category_id')->nullable()->after('amount');
-            $table->foreign('category_id')->references('id')->on('categories')->nullOnDelete();
+        Schema::create('categories', function (Blueprint $table) {
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
@@ -26,8 +25,9 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('operations', function (Blueprint $table) {
-            $table->dropColumn('category_id');
+
+        Schema::create('categories', function (Blueprint $table) {
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 };
