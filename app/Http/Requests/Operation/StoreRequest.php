@@ -27,6 +27,7 @@ class StoreRequest extends FormRequest
         return [
             'amount' => 'numeric|required',
             'comment' => 'nullable',
+            'category_id' => 'integer|nullable',
             'account_id' => 'integer|required',
             'is_income' => 'boolean'
         ];

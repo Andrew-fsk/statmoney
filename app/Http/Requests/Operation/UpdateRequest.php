@@ -28,6 +28,7 @@ class UpdateRequest extends FormRequest
             'amount' => 'numeric|required',
             'comment' => 'nullable',
             'account_id' => 'integer|required',
+            'category_id' => 'integer|nullable',
             'is_income' => 'boolean'
         ];
     }

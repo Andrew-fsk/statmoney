@@ -47,6 +47,10 @@ class User extends Authenticatable
     }
 
     public function operations(){
-        return $this->hasMany(Operation::class )->orderBy('created_at', 'DESC');
+        return $this->hasMany(Operation::class )->orderBy('created_at', 'ASC');
+    }
+
+    public function categories(){
+        return $this->hasMany(Category::class )->orderBy('name', 'DESC');
     }
 }

@@ -35,6 +35,7 @@
                                 <th style="width: 200px;">Amount</th>
                                 <th>Comment</th>
                                 <th>Account</th>
+                                <th>Category</th>
                                 <th style="width: 150px;">Date</th>
                                 <th>Edit</th>
                             </tr>
@@ -46,6 +47,7 @@
                                     <td class="font-weight-bolder"> <span class="badge @if( $operation->is_income){{'bg-success'}}@else{{'bg-danger'}}@endif" style="font-size: 16px;">@if( $operation->is_income){{'+'}}@else{{'-'}}@endif{{ $operation->amount }} UAH</span></td>
                                     <td>{{ $operation->comment }}</td>
                                     <td>{{ $operation->account->name }}</td>
+                                    <td>{{ $operation->category->name }}</td>
                                     <td>{{ $operation->created_at }}</td>
                                     <td> <a style="width: 40px; height: 40px; margin-top: 10px;" type="button" class="btn btn-primary"
                                             href="{{ route('operation.edit', $operation->id) }}"><i
